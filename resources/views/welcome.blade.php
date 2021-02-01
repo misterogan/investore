@@ -1,4 +1,4 @@
-@extends('website.layouts.app')
+@extends('website.include.nav')
 
 @section('css')
 
