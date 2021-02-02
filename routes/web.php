@@ -20,11 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/users', 'admin\UsersController@index')->name('users');
+Route::post('/admin/users/getlist', 'admin\UsersController@paging')->name('users.paging');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

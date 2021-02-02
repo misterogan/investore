@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'AdminUsers',
+        'passwords' => 'admin_users',
     ],
 
     /*
@@ -38,12 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'AdminUsers',
+            'provider' => 'admin_users',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'AdminUsers',
+            'provider' => 'admin_users',
             'hash' => false,
         ],
     ],
@@ -66,7 +66,7 @@ return [
     */
 
     'providers' => [
-        'AdminUsers' => [
+        'admin_users' => [
             'driver' => 'eloquent',
             'model' => App\AdminUsers::class,
         ],
@@ -93,8 +93,8 @@ return [
     */
 
     'passwords' => [
-        'AdminUsers' => [
-            'provider' => 'AdminUsers',
+        'admin_users' => [
+            'provider' => 'admin_users',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
