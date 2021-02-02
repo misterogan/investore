@@ -21,6 +21,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/users', 'admin\UsersController@index')->name('users');
-Route::post('/admin/users/getlist', 'admin\UsersController@paging')->name('users.paging');
+Route::get('/admin/assets', 'admin\AssetsController@index')->name('assets');
+Route::post('/admin/assets/add', 'admin\AssetsController@submit')->name('assets.add');
+
+Route::get('/admin/management_risk/', 'admin\ManagementRiskController@index')->name('management_risk');
+Route::get('/admin/expectation_on_investment/', 'admin\ExpectationOnInvesmentController@index')->name('expectation_on_investment');
+Route::get('/admin/investments_goal/', 'admin\InvestationGoalController@index')->name('investments_goal');
+
 
 

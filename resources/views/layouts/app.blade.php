@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/round.css') }}" rel="stylesheet">
 
 
 {{--    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">--}}
@@ -28,6 +29,15 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 
 
+
+<style>
+   body{
+       background-color: white;
+   }
+   .navbar{
+       background-color: rgba(0, 0, 0, 0.03);
+   }
+</style>
 </head>
 <body>
     <div id="app">
@@ -43,25 +53,26 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="/admin/users">User <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="/admin/users"><i class="fa fa-users" aria-hidden="true"></i> User <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Master
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Asset</a>
-                                    <a class="dropdown-item" href="#">Management risk</a>
-                                    <a class="dropdown-item" href="#">Expectations on Investment</a>
+                                    <a class="dropdown-item" href="/admin/assets"><i class="fa fa-money" aria-hidden="true"></i> Asset</a>
+                                    <a class="dropdown-item" href="/admin/management_risk"><i class="fa fa-book" aria-hidden="true"></i> Management risk</a>
+                                    <a class="dropdown-item" href="/admin/expectation_on_investment"><i class="fa fa-line-chart" aria-hidden="true"></i> Expectations on Investment</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Investation Goal</a>
+                                    <a class="dropdown-item" href="/admin/investments_goal"><i class="fa fa-briefcase" aria-hidden="true"></i> Investation Goal</a>
                                 </div>
                             </li>
+
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Product</a>
+                                <a class="nav-link" href="#"><i class="fa fa-map-signs" aria-hidden="true"></i>Product</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Client</a>
+                                <a class="nav-link" href="#"><i class="fa fa-handshake-o" aria-hidden="true"></i> Client</a>
                             </li>
                         </ul>
 
@@ -71,7 +82,7 @@
                     </form>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Settings</a>
+                            <a class="nav-link" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -102,23 +113,16 @@
             @yield('content')
         </main>
     </div>
-
-{{--    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>--}}
-{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.27.0/feather.min.js" crossorigin="anonymous"></script>--}}
-{{--    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>--}}
-{{--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>--}}
-
-
-{{--    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>--}}
-{{--    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>--}}
-{{--    <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js" crossorigin="anonymous"></script>--}}
-
-{{--    <script src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js" crossorigin="anonymous"></script>--}}
-{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js" crossorigin="anonymous"></script>--}}
-{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>--}}
-{{--    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>--}}
-
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{{ asset('bootbox/bootbox.js')}}"></script>
+    <script src="{{asset('bootbox/bootbox.locales.js')}}"></script>
     @yield('js')
+    <script>
+        $(document).ready(function() {
+            $(".dropdown-toggle").dropdown();
+        });
+    </script>
 </body>
 </html>

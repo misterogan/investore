@@ -500,8 +500,10 @@ class ComposerStaticInitd1a783262110dfe41045ebc550244ec0
 
     public static $classMap = array (
         'App\\AdminUsers' => __DIR__ . '/../..' . '/app/AdminUsers.php',
+        'App\\Assets' => __DIR__ . '/../..' . '/app/Assets.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\ExpectationOnInvesments' => __DIR__ . '/../..' . '/app/ExpectationOnInvesments.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -510,6 +512,9 @@ class ComposerStaticInitd1a783262110dfe41045ebc550244ec0
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\admin\\AssetsController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/AssetsController.php',
+        'App\\Http\\Controllers\\admin\\ExpectationOnInvesmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/ExpectationOnInvesmentController.php',
+        'App\\Http\\Controllers\\admin\\ManagementRiskController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/ManagementRiskController.php',
         'App\\Http\\Controllers\\admin\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/UsersController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -520,6 +525,7 @@ class ComposerStaticInitd1a783262110dfe41045ebc550244ec0
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\ManagementRisk' => __DIR__ . '/../..' . '/app/ManagementRisk.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

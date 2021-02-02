@@ -7,8 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\AdminUsers' => $baseDir . '/app/AdminUsers.php',
+    'App\\Assets' => $baseDir . '/app/Assets.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\ExpectationOnInvesments' => $baseDir . '/app/ExpectationOnInvesments.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
@@ -17,6 +19,9 @@ return array(
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\admin\\AssetsController' => $baseDir . '/app/Http/Controllers/admin/AssetsController.php',
+    'App\\Http\\Controllers\\admin\\ExpectationOnInvesmentController' => $baseDir . '/app/Http/Controllers/admin/ExpectationOnInvesmentController.php',
+    'App\\Http\\Controllers\\admin\\ManagementRiskController' => $baseDir . '/app/Http/Controllers/admin/ManagementRiskController.php',
     'App\\Http\\Controllers\\admin\\UsersController' => $baseDir . '/app/Http/Controllers/admin/UsersController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
@@ -27,6 +32,7 @@ return array(
     'App\\Http\\Middleware\\TrustHosts' => $baseDir . '/app/Http/Middleware/TrustHosts.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\ManagementRisk' => $baseDir . '/app/ManagementRisk.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

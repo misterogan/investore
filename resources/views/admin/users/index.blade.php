@@ -17,7 +17,7 @@
                                     <table class="table table-striped" id="userlist_table">
                                         <thead>
                                             <tr>
-
+                                                <th>Num</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th></th>
@@ -27,6 +27,7 @@
                                         <tbody>
                                         @foreach($users as $user)
                                             <tr>
+                                                <td>{{  $loop->iteration  }}</td>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
                                                 <td><button class="btn btn-sm btn-primary"><i class="fa fa-address-book" aria-hidden="true"></i></button></td>
