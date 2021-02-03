@@ -23,11 +23,13 @@ Route::get('/invest-calclulator/{id}', 'CalculatorController@invest_calculator')
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/users', 'admin\UsersController@index')->name('users');
+Route::get('/admin/assets', 'admin\AssetsController@index')->name('assets');
+Route::post('/admin/assets/add', 'admin\AssetsController@submit')->name('assets.add');
 
-Auth::routes();
+Route::get('/admin/management_risk/', 'admin\ManagementRiskController@index')->name('management_risk');
+Route::get('/admin/expectation_on_investment/', 'admin\ExpectationOnInvesmentController@index')->name('expectation_on_investment');
+Route::get('/admin/investments_goal/', 'admin\InvestationGoalController@index')->name('investments_goal');
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
