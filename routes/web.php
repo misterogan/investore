@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.content.welcome');
 });
+
+Route::get('/invest-calclulator', 'CalculatorController@index')->name('users.calculator');
+Route::get('/invest-calclulator/{id}', 'CalculatorController@invest_calculator')->name('users.registration');
 
 Auth::routes();
 
