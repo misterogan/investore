@@ -94,78 +94,49 @@
         <h3>Total Penghasilan Pertahun</h3>
         @foreach($penghasilan as $index=>$val)
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-              
+            <input class="form-check-input" type="radio" name="penghasilan" id="penghasilan{{$index}}">
+            <label class="form-check-label" for="penghasilan{{$index}}">
+              {{$val}}
             </label>
           </div>
         @endforeach
-          
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Checked checkbox
-            </label>
-          </div>
         </div>
 
         <div class="col-6">
-        <h2>Total Penghasilan Pertahun</h2>
+        <h3>Jenis aset investasi yang dimiliki saat ini</h3>
+        @foreach($current_invest as $index=>$val)
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-              Default checkbox
+            <input class="form-check-input" type="radio" name="planning" id="current_invest{{$index}}">
+            <label class="form-check-label" for="current_invest{{$index}}">
+              {{$val}}
             </label>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Checked checkbox
-            </label>
-          </div>
+        @endforeach
         </div>
-
 
         <div class="col-6">
-        <h2>Total Penghasilan Pertahun</h2>
+        <h3>Jika nilai investasi anda turun, maka</h3>
+        @foreach($current_invest as $index=>$val)
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-              Default checkbox
+            <input class="form-check-input" type="checkbox" value="" id="planning{{$index}}">
+            <label class="form-check-label" for="planning{{$index}}">
+              {{$val}}
             </label>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Checked checkbox
-            </label>
-          </div>
+        @endforeach
         </div>
 
-
-        <div class="col-12">
-        <h2>Total Penghasilan Pertahun</h2>
+        <div class="col-6">
+        <h3>Apa harapan anda pada hasil investasi?</h3>
+        @foreach($goal_invest as $index=>$val)
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-              Default checkbox
+            <input class="form-check-input" type="radio" name="goal" id="goal{{$index}}">
+            <label class="form-check-label" for="goal{{$index}}">
+              {{$val}}
             </label>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Checked checkbox
-            </label>
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-            <label class="form-check-label" for="invalidCheck2">
-              Agree to terms and conditions
-            </label>
-          </div>
-        </div>
+        @endforeach
+        </div>        
         <div class="col-12 text-align-reight">
           <button class="btn btn-primary" type="submit">Selanjutnya</button>
         </div>
