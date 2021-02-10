@@ -1,65 +1,4 @@
 @extends('layouts.app')
-<style>
-    .switch {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 34px;
-    }
-
-    .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    input:checked + .slider {
-        background-color: #2196F3;
-    }
-
-    input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
-    }
-
-    input:checked + .slider:before {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
-    }
-
-    /* Rounded sliders */
-    .slider.round {
-        border-radius: 34px;
-    }
-
-    .slider.round:before {
-        border-radius: 50%;
-    }
-</style>
 @section('content')
 
     <div class="container">
@@ -76,7 +15,7 @@
                         @endif
                         <div class="float-right">
                             <div class="form-group">
-                                <a href="/admin/assets/add"><button type="button" class="btn btn-outline-primary">Add Management Risk</button></a>
+                                <button type="button" class="btn btn-outline-primary" id="addmanagementRisk">Add Management Risk</button>
                             </div>
                         </div>
 
@@ -101,10 +40,17 @@
                                         <td>{{ $mr->status == "1" ? "Active" : "Inactive" }}</td>
                                         <td>{{ $mr->created_at }}</td>
                                         <td>
-                                            <label class="switch">
-                                                <input type="checkbox" checked>
-                                                <span class="slider round"></span>
-                                            </label>
+                                            @if( $mr->status == "1")
+                                                <label class="switch">
+                                                    <input type="checkbox" onchange="toggleCheckbox('{{$mr->id}}','inactive')" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            @else
+                                                <label class="switch">
+                                                    <input type="checkbox" onchange="toggleCheckbox('{{$mr->id}}','active')">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            @endif
                                         </td>
 
                                     </tr>
@@ -119,11 +65,17 @@
             </div>
         </div>
     </div>
-@section('js')
-    <script src="{{url('/js/users.js')}}" type="application/javascript"></script>
-    <script>
 
-    </script>
+    <div class="form-content" style="display:none;">
+        <form class="form" id="form_management_risk" role="form">
+            <div class="form-group">
+                <label for="management_risk">Management Risk</label>
+                <input type="text" class="form-control" id="management_risk" name="management_risk">
+            </div>
+        </form>
+    </div>
+@section('js')
+    <script src="{{url('/assets/js/management_risk.js')}}" type="application/javascript" ></script>
 @endsection
 
 @endsection

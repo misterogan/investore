@@ -46,5 +46,25 @@ class AssetsController extends Controller
         return json_encode(['status'=> true, 'message'=> "Success"]);
     }
 
+    public function update(Request $request)
+    {
+        $id = $request->id;
+
+        if($request->status == 'inactive'){
+            $status = 0;
+        }else{
+            $status = 1;
+        }
+
+        Assets::where('id','=',$id)->update(
+            array(
+                'status'=> $status,
+            )
+        );
+        return json_encode(['status'=> true, 'message'=> "Update Success"]);
+
+    }
+
+
 
 }

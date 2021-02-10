@@ -8,6 +8,6 @@ class Assets extends Model
 {
     protected $table = 'assets';
     protected $fillable = [
-        'asset_name','staatus','created_at','updated_at','created_by','updated_by'
+        'asset_name','status','created_at','updated_at','created_by','updated_by'
     ];
 }

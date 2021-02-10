@@ -41,12 +41,12 @@
                                         <td>
                                             @if( $asset->status == "1")
                                             <label class="switch">
-                                                <input type="checkbox" onchange="toggleCheckbox(this)" checked>
+                                                <input type="checkbox" onchange="toggleCheckbox('{{$asset->id}}','inactive')" checked>
                                                 <span class="slider round"></span>
                                             </label>
                                              @else
                                                 <label class="switch">
-                                                    <input type="checkbox" onchange="toggleCheckbox(this)">
+                                                    <input type="checkbox" onchange="toggleCheckbox('{{$asset->id}}','active')">
                                                     <span class="slider round"></span>
                                                 </label>
                                             @endif
