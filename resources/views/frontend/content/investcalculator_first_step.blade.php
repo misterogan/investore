@@ -8,7 +8,7 @@
 <div class="clear-fix" style="padding: 30px 0;overflow: hidden;">
 </div>
 
-<section id="contact" class="contact" style="display:none">
+<section id="contact" class="contact step step1">
   <div class="container aos-init aos-animate" data-aos="fade-up">
     <header class="section-header">
       <p>Tujuan Investasi Kamu {{$title}}</p>
@@ -16,40 +16,52 @@
       <div class="row">
       <form class="row g-3">
           <div class="row step1">
+            
             <div class="col-md-6">
               <label for="validationDefault01" class="form-label">Judul Tujuan Investasi</label>
               <input type="text" class="form-control" id="validationDefault01" required>
             </div>
-            <div class="col-md-4">
-              <label for="validationDefault02" class="form-label">Kapan Kamu Membutuhkan</label>
-              <input class="form-control" type="date" id="example-date-input">
+
+            <div class="col-md-3">
+            <label for="validationDefaultUsername" class="form-label">Kapan Kamu Membutuhkan</label>
+              <div class="input-group">
+              <input class="form-control date-planning" type="date">
+                <span class="input-group-text" id="date-planning-label">0 bulan</span>
+              </div>
             </div>
+            
             <div class="col-md-6">
             <label for="validationDefaultUsername" class="form-label">Berapa Nilai yang Kamu Butuhkan</label>
               <div class="input-group">
                 <span class="input-group-text" id="inputGroupPrepend2">Rp</span>
-                <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                <input type="text" class="form-control currency-format" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
               </div>
             </div>
-            <div class="col-md-6">
-              <label for="validationDefault02" class="form-label">Asumsi Inflasi</label>
-              <input type="text" class="form-control" id="validationDefault02" required>
+
+            <div class="col-md-3">
+            <label for="validationDefaultUsername" class="form-label">Asumsi Inflasi</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                <span class="input-group-text" id="inputGroupPrepend2">%</span>
+              </div>
             </div>
+
             <div class="col-md-6">
               <label for="validationDefault02" class="form-label">Perkiraan Nilai Masa Depan</label>
               <div class="input-group">
                 <span class="input-group-text" id="inputGroupPrepend2">Rp</span>
-                <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                <input type="text" class="form-control currency-format" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
               </div>
             </div>
 
             <div class="col-md-3">
             </div>
+
             <div class="col-md-6">
               <label for="validationDefault02" class="form-label">Berapa Nilai Investasi Awal Kamu</label>
               <div class="input-group">
                 <span class="input-group-text" id="inputGroupPrepend2">Rp</span>
-                <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                <input type="text" class="form-control currency-format" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
               </div>
             </div>
             
@@ -57,14 +69,16 @@
               <label for="validationDefaultUsername" class="form-label">Berapa Nilai Investasi Bulanan Kamu</label>
               <div class="input-group">
                 <span class="input-group-text" id="inputGroupPrepend2">Rp</span>
-                <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                <input type="text" class="form-control currency-format" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
               </div>
             </div>
+
             <div class="col-md-6">
               <br>
                 <h3 style="color: #ff901c;">Nilai Investasi Bulanan Kamu</h3>
                 <div class="price"><sup>Rp</sup> 49.000.000<span> / bulan</span></div>
             </div>
+
           </div>
           <!--<div class="col-12">
             <div class="form-check">
@@ -83,7 +97,7 @@
 </section>
 
 
-<section id="contact" class="contact">
+<section id="contact" class="contact step step2">
   <div class="container aos-init aos-animate" data-aos="fade-up">
     <header class="section-header">
       <p>Kenali Profil Resiko Kamu</p>
@@ -145,7 +159,22 @@
   </div>
 </section>
 @section('js')
+<script src="{{url('/assets/js/utils.js')}}" type="application/javascript" ></script>
+<script>
+  $(document).on('keyup' , '.currency-format' , function(){
+    
+    var number = $(this).val();
+    var rupiah = formatRupiah(number , '');
+    $(this).val(rupiah);
+  })
 
+  $(document).on('change' , '.date-planning' , function(){
+    var str = $(this).val();
+    var planning_date = str.split("-");
+    $('#date-planning-label').text(monthDiff(new Date(),new Date(str))+' bulan');
+    //console.log(monthDiff(new Date(),new Date(str)));
+  });
+</script>
 @endsection
 
 @endsection
