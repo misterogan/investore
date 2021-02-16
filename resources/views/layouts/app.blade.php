@@ -60,11 +60,12 @@
                                     Master
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/admin/questions"><i class="fa fa-question" aria-hidden="true"></i> Questions</a>
+                                    <a class="dropdown-item" href="/admin/investments_goal"><i class="fa fa-briefcase" aria-hidden="true"></i> Investation Goal</a>
+                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/admin/assets"><i class="fa fa-money" aria-hidden="true"></i> Asset</a>
                                     <a class="dropdown-item" href="/admin/management_risk"><i class="fa fa-book" aria-hidden="true"></i> Management risk</a>
                                     <a class="dropdown-item" href="/admin/expectation_on_investment"><i class="fa fa-line-chart" aria-hidden="true"></i> Expectations on Investment</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/admin/investments_goal"><i class="fa fa-briefcase" aria-hidden="true"></i> Investation Goal</a>
                                 </div>
                             </li>
 

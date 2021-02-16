@@ -1,65 +1,4 @@
 @extends('layouts.app')
-<style>
-    .switch {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 34px;
-    }
-
-    .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    input:checked + .slider {
-        background-color: #2196F3;
-    }
-
-    input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
-    }
-
-    input:checked + .slider:before {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
-    }
-
-    /* Rounded sliders */
-    .slider.round {
-        border-radius: 34px;
-    }
-
-    .slider.round:before {
-        border-radius: 50%;
-    }
-</style>
 @section('content')
 
     <div class="container">
@@ -87,11 +26,9 @@
                                     <th>Num</th>
                                     <th>Investation</th>
                                     <th>Icon</th>
+                                    <th>Seq</th>
                                     <th>Status</th>
-                                    <th>Created At</th>
                                     <th>Action</th>
-
-
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -100,8 +37,17 @@
                                         <td>{{  $loop->iteration  }}</td>
                                         <td>{{ $goal->investation_goal }}</td>
                                         <td>{{ $goal->icon }}</td>
+                                        <td>
+                                            <select class="form-control" name="sequence" id="sequence">
+                                                <option value="1" @if (old($goal->sequence) == '1') selected="selected" @endif>1</option>
+                                                <option value="2" @if (old($goal->sequence) == '2') selected="selected" @endif>2</option>
+                                                <option value="3" @if (old($goal->sequence) == '3') selected="selected" @endif>3</option>
+                                                <option value="4" @if (old($goal->sequence) == '4') selected="selected" @endif>4</option>
+                                            </select>
+
+{{--                                            {{ $goal->sequence }}--}}
+                                        </td>
                                         <td>{{ $goal->status == "1" ? "Active" : "Inactive" }}</td>
-                                        <td>{{ $goal->created_at }}</td>
                                         <td>
                                             <label class="switch">
                                                 <input type="checkbox" checked>

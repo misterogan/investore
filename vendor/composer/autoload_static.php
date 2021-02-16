@@ -518,6 +518,7 @@ class ComposerStaticInitd1a783262110dfe41045ebc550244ec0
         'App\\Http\\Controllers\\admin\\ExpectationOnInvesmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/ExpectationOnInvesmentController.php',
         'App\\Http\\Controllers\\admin\\InvestationGoalController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/InvestationGoalController.php',
         'App\\Http\\Controllers\\admin\\ManagementRiskController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/ManagementRiskController.php',
+        'App\\Http\\Controllers\\admin\\QuestionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/QuestionsController.php',
         'App\\Http\\Controllers\\admin\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/UsersController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',

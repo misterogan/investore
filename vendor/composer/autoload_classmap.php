@@ -25,6 +25,7 @@ return array(
     'App\\Http\\Controllers\\admin\\ExpectationOnInvesmentController' => $baseDir . '/app/Http/Controllers/admin/ExpectationOnInvesmentController.php',
     'App\\Http\\Controllers\\admin\\InvestationGoalController' => $baseDir . '/app/Http/Controllers/admin/InvestationGoalController.php',
     'App\\Http\\Controllers\\admin\\ManagementRiskController' => $baseDir . '/app/Http/Controllers/admin/ManagementRiskController.php',
+    'App\\Http\\Controllers\\admin\\QuestionsController' => $baseDir . '/app/Http/Controllers/admin/QuestionsController.php',
     'App\\Http\\Controllers\\admin\\UsersController' => $baseDir . '/app/Http/Controllers/admin/UsersController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',

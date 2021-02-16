@@ -25,6 +25,9 @@ Auth::routes();
 Route::get('/home','HomeController@index')->name('home');
 Route::get('/admin/users', 'admin\UsersController@index')->name('users');
 
+//Questions
+Route::get('/admin/question', 'admin\QuestionsController@index')->name('question');
+
 //ASSET
 Route::get('/admin/assets', 'admin\AssetsController@index')->name('assets');
 Route::post('/admin/assets/add', 'admin\AssetsController@submit')->name('assets.add');
@@ -39,6 +42,18 @@ Route::post('/admin/management_risk/update', 'admin\ManagementRiskController@upd
 Route::get('/admin/expectation_on_investment/','admin\ExpectationOnInvesmentController@index')->name('expectation_on_investment');
 Route::post('/admin/expectation_on_investment/add', 'admin\expectation_on_investment@submit')->name('expectation_on_investment.add');
 Route::get('/admin/investments_goal/', 'admin\InvestationGoalController@index')->name('investments_goal');
+
+
+//Users
+Route::get('/pengguna/daftar','users\UsersController@register')->name('pengguna.daftar');
+Route::get('/pengguna/login','users\UsersController@login')->name('pengguna.login');
+Route::post('/pengguna/login/submit','users\UsersController@login_submit')->name('pengguna.login.submit');
+
+Route::post('/pengguna/daftar/submit','users\UsersController@register_submit')->name('pengguna.daftar.submit');
+Route::get('/pengguna/akun','users\UsersController@account_profile')->name('pengguna.akun');
+
+
+
 
 
 

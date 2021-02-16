@@ -16,7 +16,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'nama_lengkap', 'email', 'password','nomor_ktp','nomor_npwp','id_pekerjaan','kewarganegaraan','tempat_lahir','tanggal_lahir','jenis_kelamin','nomor_telepon','alamat','id_propinsi','id_kota',
+        'kelurahan','kecamatan','kode_pos','id_pendidikan','nama_ibu_kandung','status_tinggal','status_menikah','jumlah_kartu_kredit','nomor_bpjs_ketenagakerjaan','nomor_asuransi',
+        'nama_asuransi','status_email_verifikasi','tanggal_verifikasi_email','status','created_at','updated_at'
     ];
 
     /**
@@ -34,6 +36,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'tanggal_verifikasi_email' => 'datetime',
     ];
 }
